@@ -1,0 +1,97 @@
+<!-- templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link
+    rel="stylesheet"
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>{% block title %}Hokk$90-INICIO{% endblock %}</title>
+    <link rel="icon" href="{% static "multimedia/favicon.png" %}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="cont-header">
+            <div class="cont-img-logo">
+                <a href="{% url 'homepage' %}"><img class="img-logo" src="{% static 'multimedia/imglogo.png' %}" alt="hooks90web"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'homepage' %}">Inicio</a></li>
+                    <li><a href="{% url 'servicepage' %}">Servicios</a></li>
+                    <li><a href="{% url 'contact' %}">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main style="margin: 0">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="cont-footer">
+            <nav>
+                <ul class="redes-footer">
+                    <li>
+                        <button type="button" class="button" onclick="window.location.href='{% url 'homepage' %}'">
+                            <div class="button-top estandar"><span>INICIO</span></div>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="button" onclick="window.location.href='{% url 'servicepage' %}'">
+                            <div class="button-top estandar"><span>SERVICIOS</span></div>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="button" onclick="window.location.href='{% url 'contact' %}'">
+                            <div class="button-top estandar"><span>CONTACTOS</span></div>
+                        </button>
+                    </li>
+                </ul>
+                <ul class="redes-footer">
+                    <li>
+                        <button type="button" class="button" onclick="window.location.href='https://www.instagram.com/hooks90_/'">
+                            <div class="button-top instagram"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24"><path d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 
+                                5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0
+                                18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 1
+                                2 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"></path>
+                            </svg><spam> instagram</spam></div>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="button" onclick="window.location.href= 'https://www.youtube.com/@Hooks90'">
+                            <div class="button-top youtube"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,14.598V9.402c0-0.385,0.417-0.625,0.75-0.433l4.5,2.598c0.333,0.192,0.333,0.674,0,0.866l-4.5,2.598 C10.417,15.224,10,14.983,10,14.598z"></path>
+                            </svg><spam> youtube</spam></div>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="button">
+                            <div class="button-top whatsaap"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M19.077,4.928c-2.082-2.083-4.922-3.134-7.904-2.894C7.164,2.356,3.65,5.144,2.474,8.99 c-0.84,2.748-0.487,5.617,0.881,7.987L2.059,21.28c-0.124,0.413,0.253,0.802,0.67,0.691l4.504-1.207 c1.459,0.796,3.101,1.215,4.773,1.216h0.004c4.195,0,8.071-2.566,9.412-6.541C22.728,11.563,21.762,7.616,19.077,4.928z M16.898,15.554c-0.208,0.583-1.227,1.145-1.685,1.186c-0.458,0.042-0.887,0.207-2.995-0.624c-2.537-1-4.139-3.601-4.263-3.767 c-0.125-0.167-1.019-1.353-1.019-2.581S7.581,7.936,7.81,7.687c0.229-0.25,0.499-0.312,0.666-0.312c0.166,0,0.333,0,0.478,0.006 c0.178,0.007,0.375,0.016,0.562,0.431c0.222,0.494,0.707,1.728,0.769,1.853s0.104,0.271,0.021,0.437s-0.125,0.27-0.249,0.416 c-0.125,0.146-0.262,0.325-0.374,0.437c-0.125,0.124-0.255,0.26-0.11,0.509c0.146,0.25,0.646,1.067,1.388,1.728 c0.954,0.85,1.757,1.113,2.007,1.239c0.25,0.125,0.395,0.104,0.541-0.063c0.146-0.166,0.624-0.728,0.79-0.978 s0.333-0.208,0.562-0.125s1.456,0.687,1.705,0.812c0.25,0.125,0.416,0.187,0.478,0.291 C17.106,14.471,17.106,14.971,16.898,15.554z"></path>
+                            </svg><spam> whatsaap</spam></div>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="cont-img-logo">
+                <a href="{% url 'homepage' %}"><img class="img-logo" src="{% static 'multimedia/imglogo.png' %}" alt="hooks90web"></a>
+            </div>
+        </div>
+        <div class="footer-derechos">
+            <p>derechos reservados Hooks90 2024</p>
+        </div>
+    </footer>
+    <script>
+    </script>
+    {% block scripts_extra %}
+{% endblock %}
+</body>
+</html>

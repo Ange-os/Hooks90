@@ -1,0 +1,68 @@
+<!-- templates/home/index.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Hokk$90-INICIO{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <main>
+        {% load static %}
+        <script>
+            const images = [
+                "{% static 'multimedia/Felicarrucel1.jpg' %}",
+                "{% static 'multimedia/Felicarrucel2.jpg' %}",
+                "{% static 'multimedia/Felicarrucel3.jpg' %}"
+            ];
+        </script>
+        <div class="carrucel-cambiante">
+            <img id="img-cambiante" class="img-carrucel active" src="{% static 'multimedia/Felicarrucel1.jpg' %}" alt="Imagen Cambiante">
+            <div class="ver-mas-container">
+                <p class="ver-mas-text">Ver más</p>
+                <button class="arrow-btn">
+                    <a href="#baner-principal"><i class="bi bi-box-arrow-down"></i></a>
+                </button>
+            </div>
+        </div>
+        
+        <script src="{% static 'js/cambiarImagen.js' %}"></script>
+    </main>
+</section>
+<section class="baner-pecentacion" id="baner-principal">
+    <div class="foto-perfil" id="foto-perfil">
+        <img src="{% static 'multimedia/perfill.jpg'%}" alt="Hokks90">
+    </div>
+    <div class="text-precentacion">
+        <h4 id="text-prencentacion">
+            Mi nombre es Felipe di benedetto (A.K.A Hooks90) beatmaker y ingeniero de mezcla especializado en el sonido boombap. 
+            Con años de experiencia creando beats, proporcionando calses de produccion, servicios de mezcla y masterización. 
+            Mi objetivo es involucrarme en los proyectos de mis clientes y llevar su sonido a nuevos niveles. 
+            He trabajado con artistas y creadores de contenido, compartiendo informacion de valor y ayudándo a lograr que sus producciones suenen de calidad. Me encantaría formar parte de tu próximo proyecto y ayudarte a llevar tu sonido al siguiente nivel. No dudes en contactarme!
+        </h4>
+    </div>
+</section>
+<section class="kit">
+    <div class="text-kit">
+        <h4>NEW BOOMBAP KIT</h4>
+    </div>
+    <div class="foto-kit">
+        <img src="{% static 'multimedia/kit-f.jpeg'%}" alt="Hokks90" class="right">
+        <img src="{% static 'multimedia/kit-b.jpeg'%}" alt="Hokks90"class="left">
+    </div>
+    <div class="tex-marker">
+        <h5>
+        Si buscas un drumkit que capture el peso y la textura del boombap clásico, Final Boss Collection es tu mejor opción. Este kit incluye:
+        🔥 50 drum breaks clásicos y 40 loops procesados en SP-404, perfectos para añadir swing y carácter a tus ritmos.
+        🔊 Drum shots de cuatro máquinas legendarias: MPC 60, MPC 2000, SP-1200 y SP-404, asegurando golpes auténticos.
+        🎸 52 bass shots listos para potenciar el low-end.
+        🎤 14 acapellas para probar tus beats.
+        🎛 265 efectos para añadir textura y ambiente a tu producción.
+        🎹 45 samples sin chop para que los edites a tu manera.
+        Diseñado para productores que buscan crudeza y autenticidad, Final Boss Collection es más que un simple drumkit: es una herramienta esencial en tu arsenal.
+        </h5>
+    </div>
+</section>
+{% endblock %}
+{% block scripts_extra %}
+    <script src="{% static 'js/scripts.js' %}"></script>
+{% endblock %}

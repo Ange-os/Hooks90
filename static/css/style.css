@@ -1,0 +1,519 @@
+:root {
+    --color-principal: #cf5550;
+    --color-secund: #5973bd;
+    --color-gris: rgb(199, 199, 199);
+    --color-apagado: rgba(0, 36, 0, 0.616);
+    }
+
+@font-face {
+    font-family: 'relogdigital';
+    src: url('../font/DS-DIGIT.TTF');
+}    
+body {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black !important;
+}
+header {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 97%;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 30px 50px 0px 50px;
+    display: inline-block;
+    font-size: larger;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.img-carrucel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#img-cambiante {
+    opacity: 0.7; 
+}
+
+#img-cambiante:not(.active) {
+    opacity: 0; 
+}
+.ver-mas-container {
+    position: absolute;
+    bottom: 30px; /* Ubicación en la parte inferior */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column; /* Coloca el texto encima del botón */
+    align-items: center;
+    gap: 5px; /* Espacio entre el texto y el botón */
+    z-index: 10;
+}
+
+/* 🔽 Texto "Ver más" */
+.ver-mas-text {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.arrow-btn {
+    background: rgba(172, 172, 172, 0.205);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+    font-weight: bold;
+    animation: rotar 1.2s linear;
+}
+.arrow-btn a{
+    color: black;
+}
+.arrow-btn a:hover{
+    color: black;
+}
+.arrow-btn:hover {
+    background: rgba(172, 172, 172, 0.8);
+}
+@keyframes rotar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.cont-header{
+    margin: 0.5rem 8rem 0 8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cont-img-logo{
+    margin: 4px 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.img-logo{
+    height: 10.66rem;
+    width: 17.5rem;
+}
+.baner-pecentacion {
+    margin: 2rem auto 0; /* Centra la sección y mantiene márgenes */
+    min-height: 100vh; /* Permite crecer sin forzar una altura fija */
+    display: grid;
+    grid-template-columns: 55% 45%; /* Ajuste de ancho */
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem; /* Evita que los elementos se encimen */
+}
+
+.foto-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s;
+}
+
+.foto-perfil img {
+    width: 70%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px rgba(255, 0, 0, 0.5);
+}
+
+.text-precentacion {
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 2rem;
+    max-width: 90%;
+}
+
+.text-precentacion h4 {
+    font-size: 1.4em;
+    transition: all 1.4s;
+    line-height: 1.6;
+}
+
+/* 🔽 Ajuste de la sección kit */
+.kit {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0; /* Espacio arriba y abajo */ /* Separa mejor del banner */
+}
+
+.text-kit {
+    display: flex;
+}
+
+.text-kit h4 {
+    margin-bottom: 0.5em;
+    padding: 12px;
+    border-radius: 6px;
+    border: solid 3px rgb(160, 160, 160);
+    background-color: rgb(27, 27, 27);
+    font-family: 'relogdigital';
+    color: var(--color-apagado);
+    font-size: 4em;
+    font-weight: bold;
+    background-image: url('../multimedia/bgkit.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: color 2s ease;
+    box-shadow: 0px 5px 6px 0px rgb(160, 160, 160);
+}
+.tex-marker{
+    color: white;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+}
+.tex-marker h4{
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.foto-kit {
+    margin: 1em;
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Evita superposición en pantallas pequeñas */
+    gap: 1.5rem; /* Espacio entre imágenes */
+}
+
+.foto-kit img {
+    width: 32%;
+    height: auto;
+    box-shadow: 2px 2px 15px var(--color-principal);
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 2s ease, opacity 2s ease;
+}
+
+.foto-kit img.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 🔽 Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .baner-pecentacion {
+        grid-template-columns: 1fr; /* Se ajusta a una sola columna */
+        text-align: center;
+    }
+
+    .text-precentacion {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .text-precentacion h4 {
+        font-size: 1.4em;
+    }
+
+    .kit {
+        padding: 3rem 1rem;
+    }
+
+    .foto-kit img {
+        width: 80%;
+    }
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff00;
+    margin-top: 2em;
+    margin-bottom: 0;
+    height: auto;
+}
+.cont-footer{
+    margin: 2em 8rem 0 16rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.footer-derechos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-derechos p{
+    font-size: small;
+    color: white !important;
+}
+.redes-footer {
+    margin: 1em;
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Espacio entre los botones */
+}
+
+.redes-footer li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.redes-footer button{
+    border-radius: 15%;
+}
+.redes-footer button:hover{
+    border: solid 1px red;
+}
+.redes-footer svg {
+    margin-right: 5px; /* Espacio entre el icono y el texto */
+    width: 16px; /* Tamaño del icono */
+    height: 16px;
+}
+
+/* Centra el texto y el icono dentro del botón */
+.redes-footer span {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+}
+/* Archivo style.css Servicos */
+
+
+
+.baner-principal{
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+    justify-content:space-around;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.507), #00000062), url('../multimedia/api2.jpg');  
+    background-color: black;
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+    z-index: 0;
+}
+.card-tex-button{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-tex-button h2{
+    margin: 0;
+    margin-bottom: 1rem;
+    text-align: start;
+    color: white;
+}
+.card-tex-button h3{
+    margin: 0;
+    width: 27rem;
+    text-align: start;
+    color: white;
+}
+
+.custom-card {
+    margin-top: 6rem;
+    height: 70% !important;
+    width: 24% !important;  /* Puedes ajustar el tamaño aquí */
+    border-radius: 2px;
+    background-color: #030303a1 !important;  /* Cambia el color de fondo */
+    border: 4px solid #dee2e6 !important;
+    box-shadow: inset 0 0 20px var(--color-principal), 0 0 30px var(--color-principal) !important;  /* Personaliza el borde */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Agrega una sombra suave */
+    transition: transform 0.3s, box-shadow 0.3s;  /* Agrega una animación de transición */
+}
+.custom-card.highlight {
+    background-color: var(--color-principal) !important; /* Color de resalte */
+}
+
+.custom-card:hover {
+    transform: translateY(-4px);  /* Efecto de elevación en hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Sombra más fuerte en hover */
+}
+
+.custom-card .card-body {
+    padding: 20px;  /* Ajusta el padding del cuerpo */
+}
+.custom-card .card-header{
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.custom-card .card-title {
+    font-size: 1rem; /* Tamaño de fuente más pequeño */
+    margin-bottom: 0.5rem; /* Reduce el margen inferior */
+}
+
+.custom-card .card-text {
+    font-size: 0.9rem; /* Tamaño de fuente ligeramente reducido */
+    margin-bottom: 0.2rem; /* Reduce el espacio entre cada párrafo */
+    padding: 0; /* Elimina el padding de cada párrafo */
+}
+.custom-card .card-title {
+    font-size: 1.25rem;  /* Ajusta el tamaño de la fuente del título */
+    font-weight: bold;
+    color: white;
+}
+
+.custom-card .card-text {
+    font-size: 1rem;  /* Ajusta el tamaño de la fuente del texto */
+    color: #ffffff;   /* Cambia el color del texto */
+}
+
+.custom-card .btn {
+    background-color: var(--color-principal);  /* Cambia el color del botón */
+    border: none;
+    transition: background-color 0.3s;  /* Transición suave para el botón */
+}
+
+.custom-card .btn:hover {
+    background-color: var(--color-principal) !important;
+    border: solid 1px white;  /* Cambia el color del botón al pasar el mouse */
+}
+.text-center{
+    color: var(--color-principal);
+}
+.reproductor-spotyfy{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 95vh;
+    background-image: url('../multimedia/bgspoty2.jpg');  
+    background-repeat: no-repeat; 
+    background-size: cover;
+    margin-bottom: 4rem;
+}
+.reproductor-spotyfy-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tex-spotyfy{
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+.reproductor-spotyfy-div iframe{
+    opacity: 0; 
+    transform: translateX(-100%); 
+    transition: transform 2s ease, opacity 2s ease;
+}
+.reproductor-spotyfy-div iframe.show {
+opacity: 1;
+transform: translateX(0); 
+}
+
+
+/* Cotacto styles */
+.baner-principal-contac{
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.507), #00000062), url('../multimedia/FeliHooks905.jpg');  
+    background-color: black;
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+    z-index: 0;
+}
+
+.contact-section {
+    border: 4px solid #dee2e6 !important;
+    box-shadow: inset 0 0 20px var(--color-principal), 0 0 30px var(--color-principal) !important;
+    width: 60%;
+    margin-top: 0;
+    padding: 2rem;
+    background-color: #0000007e !important;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.form-group {
+    padding: 4px;
+    z-index: 1;
+    color: white;
+    font-size: 1.5em;
+}

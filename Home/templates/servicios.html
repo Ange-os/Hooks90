@@ -1,0 +1,83 @@
+<!-- templates/home/index.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Servicios{% endblock %}
+
+{% block content %}
+<section class="baner-principal">
+    <div class="card text-center custom-card">
+        <div class="card-body">
+            <div class="card-header">Beat Personalizado</div>
+            <h5 class="card-title">Creamos juntos un beat exclusivo desde 0 en una videollamada, adaptado a tu estilo y visión.</h5>
+            <p class="card-text">• Beat personalizado en colaboración con el cliente.</p>
+            <p class="card-text">• Amplia gama de estilos, desde clásico hasta contemporáneo.</p>
+            <p class="card-text">• Una revisión incluida para ajustes finales.</p>
+            <p class="card-text">• Proceso 100% adaptable a tus preferencias.</p>
+            <div class="card-header">$50 Usd - 35.000 Ars</div>    
+            <a href="{% url 'contact' %}" class="btn btn-danger">¡CONTACTAME!</a>
+        </div>
+    </div>
+    <div class="card text-center custom-card">
+        <div class="card-body">
+            <div class="card-header">Mixing</div>
+            <h5 class="card-title">Realza tu música con una mezcla profesional que optimiza cada detalle para un sonido claro y equilibrado</h5>
+            <p class="card-text">• Mezcla detallada para claridad y balance.</p>
+            <p class="card-text">• Enfoque en el carácter único de tu canción.</p>
+            <p class="card-text">• Una revisión incluida para ajustes personalizados.</p>
+            <p class="card-text">• Preparación óptima para la fase de masterización.</p>
+            <div class="card-header">$70 Usd - 45.000 Ars</div>    
+            <a href="{% url 'contact' %}" class="btn btn-danger">¡CONTACTAME!</a>
+        </div>
+    </div>
+    <div class="card text-center custom-card">
+        <div class="card-body">
+            <div class="card-header">Mixing & Mastering</div>
+            <h5 class="card-title">Logra una mezcla y masterización completa, ajustada a tu estilo, para un sonido profesional y listo para cualquier plataforma</h5>
+            <p class="card-text">• Sonido adaptado a tu preferencia: vintage o contemporáneo.</p>
+            <p class="card-text">• Masterización que asegura la calidad final en todas las plataformas.</p>
+            <p class="card-text">• Revisión incluida con feedback en vivo.</p>
+            <p class="card-text">• Nivelación perfecta para impacto y claridad.</p>
+            <div class="card-header">$100 Usd - 60.000 Ars</div>    
+            <a href="{% url 'contact' %}" class="btn btn-danger">¡CONTACTAME!</a>
+        </div>
+    </div>
+    <div class="card text-center custom-card">
+        <div class="card-body">
+            <div class="card-header">Edición de Audio</div>
+            <h5 class="card-title">Optimiza tu audio para plataformas con edición que mejora claridad y reduce ruidos.</h5>
+            <p class="card-text">• Calidad optimizada para videos, podcasts y redes sociales.</p>
+            <p class="card-text">• Reducción de ruidos y ajuste de niveles.</p>
+            <p class="card-text">• Sonido limpio y profesional para un impacto superior.</p>
+            <p class="card-text">• Mejor experiencia de escucha para tu audiencia.</p>
+            <div class="card-header">Consultar presupuesto</div>    
+            <a href="{% url 'contact' %}" class="btn btn-danger">¡CONTACTAME!</a>
+        </div>
+    </div>
+    <div class="ver-mas-container">
+        <p class="ver-mas-text">Music</p>
+        <button class="arrow-btn">
+            <a href="#musica"><i class="bi bi-music-note-list"></i></a>
+        </button>
+    </div>
+</section>
+<section class="reproductor-spotyfy" id="musica">
+    <div class="reproductor-spotyfy-div">
+        <div class="text-kit">
+            <h4>TRABAJOS Y COLABORACIONES</h4>
+        </div>
+        <iframe
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/1CbcWlSxQq1B4opJxKXnbp?utm_source=generator"
+            width="100%"
+            height="500"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+    </div>
+</section>
+{% endblock %}
+{% block scripts_extra %}
+<script src="{% static 'js/servicios.js' %}"></script>
+{% endblock %}

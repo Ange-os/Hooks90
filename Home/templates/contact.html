@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contáctame{% endblock %}
+
+{% block content %}
+<section class="baner-principal-contac">
+    <div class="text-kit">
+        <h4>CONTACTO</h4>
+    </div> 
+    <div class="contact-section">
+        <div class="container">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+    
+            <form method="post" >
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                </div>
+                <div class="form-group">
+                    {{ form.message.label_tag }}
+                    {{ form.message }}
+                </div>
+                <button type="submit" class="btn btn-danger mt-2">Enviar</button>
+            </form>
+        </div>
+    </div>
+    
+</section>
+<script src="{% static 'js/contact.js' %}"></script>
+{% endblock %}
