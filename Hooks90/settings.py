@@ -14,7 +14,7 @@ SECRET_KEY = config('KEY_DJANGO')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1',  '.loca.lt']
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
