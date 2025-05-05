@@ -13,8 +13,11 @@ SECRET_KEY = config('KEY_DJANGO')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
+ALLOWED_HOSTS = [
+    'hooks90.onrender.com',  # Add your render app domain here
+    'localhost',
+    '127.0.0.1',
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
